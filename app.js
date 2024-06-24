@@ -76,14 +76,76 @@ const questions = [
    },
 
    {
-    question: "What is the largest planet in our solar system?",
+    question: "What is the smallest planet in our solar system?",
     answers: [
         {text: "Earth", correct: false},
-        {text: "Saturn", correct: false},
-        {text: "Jupiter", correct: true},
+        {text: "Mercury", correct: true},
+        {text: "Jupiter", correct: false},
         {text: "Uranus", correct: false},
     ]
-   }
+   },
+
+   {
+     question: "What is furthest planet in our solar system",
+     answers : [
+        {text: "Neptune", correct: true},
+        {text: "Uranus", correct: false},
+        {text: "Saturn", correct: false},
+        {text: "Pluto", correct: false},
+     ]
+   },
+   {
+    question : "What is the hottest planet in our solar system",
+    answers : [
+        {text: "Mercury", correct: false},
+        {text: "Venus", correct: true},
+        {text: "Mars", correct: false},
+        {text: "Jupiter", correct: false},
+    ]
+   },
+
+  {
+    question : "What planet is referred to as the dwarf planet",
+    answers : [
+        {text: "Pluto", correct: true},
+        {text: "Neptune", correct: false},
+        {text: "Mars", correct: false},
+        {text: "Jupiter", correct: false},
+    ]
+  }, 
+
+  {
+    question : "What planet is referred to as the earth twins",
+    answers : [
+        {text: "Venus", correct: true},
+        {text: "Mars", correct: false},
+        {text: "Jupiter", correct: false},
+        {text: "Saturn", correct: false},
+
+    ]
+
+  },
+
+  {
+    question : "What are the three planet that may be able to support life",
+    answers : [
+        {text: "Mars, Venus, Jupiter", correct: false},
+        {text: "Mars, Venus, Neptune", correct: false},
+        {text: "Mars, Venus, Saturn", correct: false},
+        {text: "Mars, Venus, Earth", correct: true},
+    ]
+  },
+
+  {
+    question: "What device is used to measure the speed of the wind",
+    answers : [
+        {text: "Anemometer", correct: true},
+        {text: "Barometer", correct: false},
+        {text: "Hygrometer", correct: false},
+        {text: "Thermometer", correct: false},
+
+    ]
+  }
    
  
 ]
@@ -142,7 +204,7 @@ function resetState(){
     }
 }
 
-function selectAnswer(e){
+let selectAnswer = (e) => {
     
     let isCorrect = e.target.dataset.correct === "true"
 
