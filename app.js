@@ -150,7 +150,8 @@ function selectAnswer(e){
         e.target.classList.toggle('checked')
         score++
     } else{
-        e.target.classList.add("")
+        e.target.classList.toggle("checked")
+        
     }
 
     // Array.from(answerButtons.children).forEach(button =>{
