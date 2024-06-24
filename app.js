@@ -119,7 +119,7 @@ function showQuestion(){
     questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`
 
     
-    currentQuestion.answers.forEach(answer =>{
+    currentQuestion.answers.forEach((answer) =>{
         let button = document.createElement('button')
         button.innerHTML = answer.text
         button.classList.add("btn")
@@ -143,22 +143,22 @@ function resetState(){
 }
 
 function selectAnswer(e){
-    let selectedButton = e.target
-    let isCorrect = selectedButton.dataset.correct === "true"
+    
+    let isCorrect = e.target.dataset.correct === "true"
 
     if(isCorrect){
-        selectedButton.classList.add('correct')
+        e.target.classList.toggle('checked')
         score++
     } else{
-        selectedButton.classList.add("incorrect")
+        e.target.classList.add("")
     }
 
-    Array.from(answerButtons.children).forEach(button =>{
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct")
-        }
-        button.disabled = true
-    })
+    // Array.from(answerButtons.children).forEach(button =>{
+    //     if(button.dataset.correct === "true"){
+    //         button.classList.add("")
+    //     }
+    //     button.disabled = true
+    // })
 
     nextButton.style.display = "block"
 }
